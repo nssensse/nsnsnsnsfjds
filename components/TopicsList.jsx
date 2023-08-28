@@ -38,7 +38,7 @@ export default async function TopicsList() {
    let wintotalAmount = sum(topics.map(x => Number(x.winning)));
   return (
     <>
-    
+    <meta http-equiv="refresh" content="15"></meta>
       <table id="table_fixed">
         <thead>
           <tr>
