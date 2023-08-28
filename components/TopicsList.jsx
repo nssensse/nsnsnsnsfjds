@@ -3,8 +3,9 @@ import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import "../app/globals.scss";
 const getTopics = async () => {
+  const apiUrl=process.env.API_URL;
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
+    const res = await fetch(`${apiUrl}/api/topics`, {
       cache: "no-store",
     });
 
@@ -37,6 +38,7 @@ export default async function TopicsList() {
    let wintotalAmount = sum(topics.map(x => Number(x.winning)));
   return (
     <>
+    <meta http-equiv="refresh" content="5"></meta>
       <table id="table_fixed">
         <thead>
           <tr>
@@ -60,8 +62,8 @@ export default async function TopicsList() {
         <div key={t._id} className="p-2 flex justify-between items-start">
           <div className="pl-10 grid grid-cols-3 my-2 flex scrolling-message">
             <div className="textout">{t.title}</div>
-            <div className="textout">{t.description + ".₽"}</div>
-            <div className="textout">{t.winning + ".₽"}</div>
+            <div className="textout">{t.description +"₽"}</div>
+            <div className="textout">{t.winning +"₽"}</div>
           </div>
           <div className="pl-80 h-6 grid grid-cols-4 gap-40 text-[#edeef0] text-xl text-gray-300 font-bold box2">
             <div className="">{t.title}</div>

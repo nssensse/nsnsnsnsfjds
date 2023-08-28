@@ -2,21 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-const getTopics = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/api/topics", {
-      cache: "no-store",
-    });
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch topics");
-    }
-
-    return res.json();
-  } catch (error) {
-    console.log("Error loading topics: ", error);
-  }
-};
 export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -32,7 +18,7 @@ export default function AddTopic() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/topics", {
+      const res = await fetch("/api/topics", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
