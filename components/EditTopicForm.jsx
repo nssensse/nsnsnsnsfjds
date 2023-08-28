@@ -35,9 +35,7 @@ export default function EditTopicForm({ id, title, description ,winning}) {
   return (
 
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 editheader">
-<RemoveBtn id={id} className="remove"/>
-
-                  
+                 
       <input
         onChange={(e) => setNewTitle(e.target.value)}
         value={newTitle}
@@ -62,7 +60,7 @@ export default function EditTopicForm({ id, title, description ,winning}) {
       />
       
 
-      <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
+      <button className="bg-black font-bold text-white py-3 px-6 w-fit">
         Update Bonus
       </button>
     </form>

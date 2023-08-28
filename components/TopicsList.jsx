@@ -58,7 +58,7 @@ export default async function TopicsList() {
 
       {topics.map((t) => (
         <div key={t._id} className="p-2 flex justify-between items-start">
-          <div className="pl-10 grid grid-cols-3 my-2 flex text-[#edeef0] scrolling-message">
+          <div className="pl-10 grid grid-cols-3 my-2 flex scrolling-message">
             <div className="textout">{t.title}</div>
             <div className="textout">{t.description + ".₽"}</div>
             <div className="textout">{t.winning + ".₽"}</div>
@@ -66,8 +66,9 @@ export default async function TopicsList() {
           <div className="pl-80 h-6 grid grid-cols-4 gap-40 text-[#edeef0] text-xl text-gray-300 font-bold box2">
             <div className="">{t.title}</div>
             <div className="">
+            <RemoveBtn id={t._id} />
               <Link href={`/editTopic/${t._id}`}>
-                <HiPencilAlt size={20} />
+                <HiPencilAlt size={18} />
               </Link>
             </div>
           </div>
