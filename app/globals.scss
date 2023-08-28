@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.cdnfonts.com/css/glitch-goblin');
+body {
+  background-color: rgba(0, 0, 0, 0.822);
+}
+.bheader{
+  font-size: large;
+  font-family: 'Glitch Goblin', sans-serif;
+  top:-4px;
+  width:640px;
+  position:absolute; 
+
+}
+.head2{
+  margin-top: 220px;
+  position:absolute; 
+}
+form{
+  
+  padding-top: 100px;
+}
+.editheader{
+  top:-50px;
+}
+.bheader2{
+  padding-top: 100px;
+  height: 100px;
+background-color: aliceblue;
+}
+.blogo{
+  margin-left: 100px;
+}
+.bbutton{
+  margin-top: -20px;
+  margin-left: 250px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+.box{
+  font-family: 'Glitch Goblin', sans-serif;
+  z-index: auto;
+  background-color: rgba(103, 104, 104, 0.185);
+  width:100%;
+  height: 30px;
+}
+.box2{
+  padding-bottom: 50px;
+  width: 100px;
+  height: 40px;
+}
+.scrolling-message {
+  gap: 220px;
+  animation: scrollText 14s linear infinite;
+}
+​
+.scrolling-message-container {
+
+}
+.textout{
+  text-align: center;
+  vertical-align: middle;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+.remove{
+  padding-top: 200px;
+  font-size: xx-large;
+  color: red;
+}
+
+@keyframes scrollText {
+  
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(-250px);
+  }
+}
+th{
+  padding-right: 50px;
+}
+#table_fixed thead th {
+  z-index: 1;
+  position: relative;  
+  top: 64px;
+  height: 100px;
+  background-color: #4d4d4d;
+  color: #c2c2c2;
+  height: 50px;
+  width: 500px;
+}
+.bg-carti{
+  
+ background-image: url('https://i.pinimg.com/564x/7e/6d/31/7e6d317d52374031e10cf6f8639f3d9e.jpg');
+ background-position: top;
+}
+#table_fixed2 thead th {
+  z-index: 1;
+  position: relative;  
+  top: 64px;
+  height: 100px;
+  background-color: #4d4d4d;
+  color: #c2c2c2;
+  height: 30px;
+  width: 500px;
+}
+.windowsize{
+  height: 500px;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
