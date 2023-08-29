@@ -38,7 +38,7 @@ export default async function TopicsList() {
    let wintotalAmount = sum(topics.map(x => Number(x.winning)));
   return (
     <>
-    
+    <meta http-equiv="refresh" content="15" ></meta>
 
       <table id="table_fixed2">
         <thead>
@@ -60,6 +60,7 @@ export default async function TopicsList() {
       </table>
 
       {topics.map((t) => (
+        
         <div key={t._id} className="flex">
           <div className='grid grid-cols-3 scrolling-message'>
             <div className="textout">{t.title}</div>
