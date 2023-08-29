@@ -8,7 +8,6 @@ export default function AddTopic() {
   const [description, setDescription] = useState("");
   const [winning, setWinning] = useState("");
   const router = useRouter();
-  router.refresh();
   const handleSubmit = async (e) => {
     e.preventDefault();
     router.refresh();
@@ -27,7 +26,7 @@ export default function AddTopic() {
       });
       
       if (res.ok) {
-        
+        router.refresh();
       } else {
         throw new Error("Failed to create a topic");
       }
@@ -40,7 +39,7 @@ export default function AddTopic() {
     
     
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      router.refresh();
+      
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
