@@ -6,7 +6,10 @@ body {
   background-color: rgba(0, 0, 0, 0.822);
 }
 .bheader{
-  font-size: large;
+  height: 70px;
+  padding-top: 10px;
+  padding-left: 200px;
+  font-size: 30px;
   font-family: 'Glitch Goblin', sans-serif;
   top:-4px;
   width:640px;
@@ -52,7 +55,8 @@ background-color: aliceblue;
   height: 40px;
 }
 .scrolling-message {
-  gap: 220px;
+  padding-left: 20px;
+  gap: 240px;
   animation: scrollText 14s linear infinite;
 }
 ​
@@ -61,9 +65,11 @@ background-color: aliceblue;
 }
 .textout{
   color: #ffffff;
+ 
+  font-size: 30px;
   text-align: center;
   vertical-align: middle;
-  text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000;
+  //text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000;
 }
 .remove{
   padding-top: 200px;
@@ -77,7 +83,7 @@ background-color: aliceblue;
     transform: translateY(100px);
   }
   100% {
-    transform: translateY(-250px);
+    transform: translateY(-550px);
   }
 }
 th{
@@ -85,26 +91,31 @@ th{
 }
 #table_fixed thead th {
   z-index: 1;
+  font-size: 28px;
   position: relative;  
-  top: 64px;
+  top: 26px;
   height: 100px;
+
   background-color: #4d4d4d;
-  color: #c2c2c2;
+  color: #edeef0;
   height: 50px;
   width: 500px;
 }
 .bg-carti{
-  
- background-image: url('https://i.pinimg.com/564x/7e/6d/31/7e6d317d52374031e10cf6f8639f3d9e.jpg');
+
+  background-repeat: no-repeat;
+  background-color: #333333;
+  background-size: cover;
  background-position: top;
 }
 #table_fixed2 thead th {
   z-index: 1;
   position: relative;  
-  top: 64px;
+  top: 32px;
+  font-size: 26px;
   height: 100px;
   background-color: #4d4d4d;
-  color: #c2c2c2;
+  color: #edeef0;
   height: 30px;
   width: 500px;
 }

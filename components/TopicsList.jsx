@@ -38,16 +38,8 @@ export default async function TopicsList() {
    let wintotalAmount = sum(topics.map(x => Number(x.winning)));
   return (
     <>
-    <meta http-equiv="refresh" content="15"></meta>
-      <table id="table_fixed">
-        <thead>
-          <tr>
-            <th>💎{keyCount}💎</th>
-            <th>💰 {totalAmount}💰</th>
-            <th>🏆{wintotalAmount}🏆 </th>
-          </tr>
-        </thead>
-      </table>
+    
+
       <table id="table_fixed2">
         <thead>
           <tr>
@@ -57,15 +49,24 @@ export default async function TopicsList() {
           </tr>
         </thead>
       </table>
+      <table id="table_fixed">
+        <thead>
+          <tr>
+            <th>🎰{keyCount}</th>
+            <th>💰{totalAmount} </th>
+            <th>🏆{wintotalAmount} </th>
+          </tr>
+        </thead>
+      </table>
 
       {topics.map((t) => (
-        <div key={t._id} className="p-2 flex justify-between items-start">
-          <div className="pl-10 grid grid-cols-3 my-2 flex scrolling-message">
+        <div key={t._id} className="flex">
+          <div className='grid grid-cols-3 scrolling-message'>
             <div className="textout">{t.title}</div>
             <div className="textout">{t.description +"₽"}</div>
             <div className="textout">{t.winning +"₽"}</div>
           </div>
-          <div className="pl-80 h-6 grid grid-cols-4 gap-40 text-[#edeef0] text-xl text-gray-300 font-bold box2">
+          <div className="pl-80 h-6 grid grid-cols-2 gap-40 text-[#edeef0] text-xl font-bold box2">
             <div className="">{t.title}</div>
             <div className="">
             <RemoveBtn id={t._id} />

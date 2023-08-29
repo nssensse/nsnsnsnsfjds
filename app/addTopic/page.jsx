@@ -25,7 +25,7 @@ export default function AddTopic() {
         },
         body: JSON.stringify({ title, description ,winning}),
       });
-
+      router.refresh();
       if (res.ok) {
         
       } else {
