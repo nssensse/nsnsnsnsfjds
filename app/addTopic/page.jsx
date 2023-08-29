@@ -8,10 +8,10 @@ export default function AddTopic() {
   const [description, setDescription] = useState("");
   const [winning, setWinning] = useState("");
   const router = useRouter();
-
+  router.refresh();
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    router.refresh();
     if (!title || !description) {
       alert("Title and description are required and win.");
       return;
@@ -25,7 +25,7 @@ export default function AddTopic() {
         },
         body: JSON.stringify({ title, description ,winning}),
       });
-      router.refresh();
+      
       if (res.ok) {
         
       } else {
@@ -40,6 +40,7 @@ export default function AddTopic() {
     
     
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+      router.refresh();
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}

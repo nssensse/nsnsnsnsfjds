@@ -12,7 +12,7 @@ export default function EditTopicForm({ id, title, description ,winning}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    router.refresh();
     try {
       const res = await fetch(`/api/topics/${id}`, {
         method: "PUT",
@@ -26,7 +26,6 @@ export default function EditTopicForm({ id, title, description ,winning}) {
         throw new Error("Failed to update bonus");
       }
       
-      router.refresh();
       router.push("/");
     } catch (error) {
       console.log(error);
@@ -35,7 +34,7 @@ export default function EditTopicForm({ id, title, description ,winning}) {
   return (
 
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 editheader">
-                 
+                 router.refresh();
       <input
         onChange={(e) => setNewTitle(e.target.value)}
         value={newTitle}
