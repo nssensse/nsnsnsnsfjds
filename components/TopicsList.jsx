@@ -2,6 +2,7 @@ import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import "../app/globals.scss";
+import { stringify } from "postcss";
 const getTopics = async () => {
   const apiUrl=process.env.API_URL;
   try {
@@ -35,6 +36,14 @@ export default async function TopicsList() {
 
    let sumwin = a => a.reduce((x, y) => x + y);
    let wintotalAmount = sum(topics.map(x => Number(x.winning)));
+   var variable=1;
+   if(keyCount>6)
+   {
+    variable =0;
+   }
+   else{
+    variable=1;
+   }
   return (
     <>
   
@@ -62,7 +71,7 @@ export default async function TopicsList() {
         
         <div key={t._id} className="flex">
           
-          <div className='grid grid-cols-3 scrolling-message'>
+          <div className={variable ? "grid grid-cols-3 defaultgrid":"grid grid-cols-3 scrolling-message"}>
             <div className="textout">{t.title}</div>
             <div className="textout">{t.description +"₽"}</div>
             <div className="textout">{t.winning +"₽"}</div>

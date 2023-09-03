@@ -54,18 +54,26 @@ background-color: aliceblue;
   width: 100px;
   height: 40px;
 }
+.defaultgrid{
+  margin-top:22px;
+  padding-left: 20px;
+  gap: 220px;
+}
 .scrolling-message {
   padding-left: 20px;
   gap: 240px;
-  animation: scrollText 14s linear infinite;
+  animation: scrollText 20s linear infinite;
 }
 ​
-.scrolling-message-container {
-
+.dsfkdk{
+  padding-left: 20px;
+  gap: 240px;
+  animation: scrollText 10s linear infinite;
 }
+
 .textout{
   color: #ffffff;
- 
+ height: 40px;
   font-size: 30px;
   text-align: center;
   vertical-align: middle;
@@ -83,7 +91,7 @@ background-color: aliceblue;
     transform: translateY(100px);
   }
   100% {
-    transform: translateY(-550px);
+    transform: translateY(-650px);
   }
 }
 th{
