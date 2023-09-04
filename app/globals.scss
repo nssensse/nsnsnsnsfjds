@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.cdnfonts.com/css/glitch-goblin');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
 body {
-  background-color: rgba(0, 0, 0, 0.822);
+  background-color: rgba(0, 255, 21, 0.822);
 }
 .bheader{
   height: 70px;
   padding-top: 10px;
   padding-left: 200px;
+  background-color: #36363f;
   font-size: 30px;
   font-family: 'Glitch Goblin', sans-serif;
   top:-4px;
@@ -45,7 +47,6 @@ background-color: aliceblue;
 .box{
   font-family: 'Glitch Goblin', sans-serif;
   z-index: auto;
-  background-color: rgba(103, 104, 104, 0.185);
   width:100%;
   height: 30px;
 }
@@ -55,7 +56,7 @@ background-color: aliceblue;
   height: 40px;
 }
 .defaultgrid{
-  margin-top:22px;
+  margin-top:38px;
   padding-left: 20px;
   gap: 220px;
 }
@@ -72,8 +73,8 @@ background-color: aliceblue;
 }
 
 .textout{
-  color: #ffffff;
- height: 40px;
+  color: #b7b7b8;
+ height: 20px;
   font-size: 30px;
   text-align: center;
   vertical-align: middle;
@@ -98,37 +99,57 @@ th{
   padding-right: 50px;
 }
 #table_fixed thead th {
+  font-family: 'Tahoma', sans-serif;
   z-index: 1;
-  font-size: 28px;
+  font-size: 22px;
   position: relative;  
-  top: 26px;
+  top: 36px;
   height: 100px;
 
-  background-color: #4d4d4d;
-  color: #edeef0;
+  background-color: #2b2c31;
+  color: #9e9fa0;
   height: 50px;
   width: 500px;
 }
 .bg-carti{
-
   background-repeat: no-repeat;
-  background-color: #333333;
+  background-color: #36363f;
   background-size: cover;
  background-position: top;
 }
+.border-right{
+  border-radius: 0px 10px 10px 0px;
+}
+.border-left{
+  border-radius: 10px 0px 0px 10px;
+}
 #table_fixed2 thead th {
+  font-family: 'Tahoma', sans-serif;
   z-index: 1;
   position: relative;  
-  top: 32px;
-  font-size: 26px;
+  top: 34px;
+  font-size: 24px;
   height: 100px;
-  background-color: #4d4d4d;
-  color: #edeef0;
+  background-color: #414246;
+  color: #9e9fa0;
   height: 30px;
   width: 500px;
 }
+#table_fixed3 {
+  font-family: 'Tahoma', sans-serif;
+  z-index: 1;
+  font-size: 22px;
+  position:absolute; 
+border-radius: 20px;
+  top: 500px;
+  height: 100px;
+  background-color: #2b2c31;
+  color: #9e9fa0;
+  height: 50px;
+  width: 640px;
+}
 .windowsize{
-  height: 500px;
+  height: 560px;
 }
 .dropbtn {
   background-color: #4CAF50;
@@ -143,6 +164,14 @@ th{
   position: relative;
   display: inline-block;
 }
+.pryamoug{
+  z-index: 1;
+  position: relative;  
+top: -220px;
+  background-color: #36363f;
+  height: 10px;
+  width:640px;
+}
 
 .dropdown-content {
   display: none;
@@ -153,7 +182,14 @@ th{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
+.input{
+  background-color: #2b2c31;
+}
+input[type="text"], textarea {
 
+  background-color :#2b2c31;
+
+}
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
