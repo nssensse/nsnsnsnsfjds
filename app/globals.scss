@@ -1,18 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.cdnfonts.com/css/glitch-goblin');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 body {
-  background-color: rgba(0, 255, 21, 0.822);
+  background-color: rgba(68, 70, 68, 0.822);
 }
 .bheader{
   height: 70px;
   padding-top: 10px;
   padding-left: 200px;
   background-color: #36363f;
-  font-size: 30px;
-  font-family: 'Glitch Goblin', sans-serif;
+  font-size:30px;
+  font-family: 'Permanent Marker', cursive;
   top:-4px;
   width:640px;
   position:absolute; 
@@ -45,7 +45,7 @@ background-color: aliceblue;
 }
 
 .box{
-  font-family: 'Glitch Goblin', sans-serif;
+  //font-family: 'Glitch Goblin', sans-serif;
   z-index: auto;
   width:100%;
   height: 30px;
@@ -78,6 +78,7 @@ background-color: aliceblue;
   font-size: 30px;
   text-align: center;
   vertical-align: middle;
+  font-family: 'VT323', monospace;
   //text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000;
 }
 .remove{
@@ -99,7 +100,8 @@ th{
   padding-right: 50px;
 }
 #table_fixed thead th {
-  font-family: 'Tahoma', sans-serif;
+  //font-family: 'Tahoma', sans-serif;
+  
   z-index: 1;
   font-size: 22px;
   position: relative;  
@@ -124,7 +126,7 @@ th{
   border-radius: 10px 0px 0px 10px;
 }
 #table_fixed2 thead th {
-  font-family: 'Tahoma', sans-serif;
+  //font-family: 'Tahoma', sans-serif;
   z-index: 1;
   position: relative;  
   top: 34px;
@@ -136,7 +138,7 @@ th{
   width: 500px;
 }
 #table_fixed3 {
-  font-family: 'Tahoma', sans-serif;
+  //font-family: 'Tahoma', sans-serif;
   z-index: 1;
   font-size: 22px;
   position:absolute; 

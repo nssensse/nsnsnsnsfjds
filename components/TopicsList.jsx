@@ -19,6 +19,14 @@ const getTopics = async () => {
     console.log("Error loading topics: ", error);
   }
 };
+function findElementWithWinningValue(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i.winning] === "") {
+      return arr[i];
+    }
+  }
+  return null; // Если нихера нету
+}
 
 export default async function TopicsList() {
   const { topics } = await getTopics();
@@ -28,9 +36,16 @@ export default async function TopicsList() {
   var b = a.map(function (item) {
     return parseFloat(item);
   });
+  
+
+  var obj = topics;
+  var last = Object.keys(obj).pop();
+  console.log(last);
+  console.log(obj[last]);
+
+ 
 
   let sum = (a) => a.reduce((x, y) => x + y);
-
   let totalAmount = sum(topics.map((x) => Number(x.description)));
 
   let sumwin = (a) => a.reduce((x, y) => x + y);
@@ -57,7 +72,7 @@ function calc(){
     <>
     
       <table id="table_fixed2">
-        <meta http-equiv="refresh" content="15"></meta>
+        
         <thead>
           <tr>
             <th className="border-left">Slot Name</th>
@@ -85,6 +100,7 @@ function calc(){
                 : "grid grid-cols-3 scrolling-message"
             }
           >
+            <meta http-equiv="refresh" content="10"></meta>
             <div className="textout">{t.title}</div>
             <div className="textout">{t.description + "₽"}</div>
             <div className="textout">{t.winning + "₽"}</div>
@@ -93,6 +109,7 @@ function calc(){
             <div className="">{t.title}</div>
             <div className="">
               <RemoveBtn id={t._id} />
+              
               <Link href={`/editTopic/${t._id}`}>
                 <HiPencilAlt size={19} />
               </Link>
@@ -103,7 +120,7 @@ function calc(){
       <table id="table_fixed3">
         <thead>
           <tr>
-
+          <th className="textout">{}</th>
           </tr>
         </thead>
       </table>

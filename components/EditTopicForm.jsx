@@ -27,6 +27,7 @@ export default function EditTopicForm({ id, title, description ,winning}) {
       }
       router.refresh();
       router.push("/");
+      refreshPage();
     } catch (error) {
       console.log(error);
     }

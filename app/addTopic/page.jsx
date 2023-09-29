@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+function refreshPage(){
+  window.location.reload();
+} 
 export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -26,6 +28,7 @@ export default function AddTopic() {
       });
       
       if (res.ok) {
+        
         router.refresh();
       } else {
         throw new Error("Failed to create a topic");
