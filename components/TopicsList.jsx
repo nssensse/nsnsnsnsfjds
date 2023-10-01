@@ -2,7 +2,6 @@ import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import "../app/globals.scss";
-import { stringify } from "postcss";
 const getTopics = async () => {
   const apiUrl = process.env.API_URL;
   try {
@@ -19,14 +18,6 @@ const getTopics = async () => {
     console.log("Error loading topics: ", error);
   }
 };
-function findElementWithWinningValue(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i.winning] === "") {
-      return arr[i];
-    }
-  }
-  return null; // Если нихера нету
-}
 
 export default async function TopicsList() {
   const { topics } = await getTopics();
@@ -37,7 +28,6 @@ export default async function TopicsList() {
     return parseFloat(item);
   });
   
-
   var obj = topics;
   var last = Object.keys(obj).pop();
   console.log(last);
@@ -56,7 +46,11 @@ export default async function TopicsList() {
   } else {
     variable = 1;
   }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+
+
+  //window.setInterval( second, 1);
 const func1 = () => {
   const name = document.getElementById("name").value;
   const lastname = document.getElementById("lastname").value;
@@ -68,14 +62,15 @@ function calc(){
   const b = Number(document.getElementById('inpb').value);
   alert(a+b);
 }
+
   return (
-    <>
     
+    <>
+    <meta http-equiv="refresh" content="15"></meta>
       <table id="table_fixed2">
-        
         <thead>
           <tr>
-            <th className="border-left">Slot Name</th>
+            <th className="border-left ">Slot Name</th>
             <th>Bonus Cost</th>
             <th className="border-right">Bonus Win</th>
           </tr>
@@ -92,7 +87,8 @@ function calc(){
       </table>
 
       {topics.map((t) => (
-        <div key={t._id} className="flex">
+        
+        <div key={t._id} className="flex ">
           <div
             className={
               variable
@@ -100,12 +96,12 @@ function calc(){
                 : "grid grid-cols-3 scrolling-message"
             }
           >
-            <meta http-equiv="refresh" content="10"></meta>
-            <div className="textout">{t.title}</div>
-            <div className="textout">{t.description + "₽"}</div>
-            <div className="textout">{t.winning + "₽"}</div>
+
+            <div className="textout max-w-xs">{t.title}</div>
+            <div className="textout">{t.description + "$"}</div>
+            <div className="textout">{t.winning + "$"}</div>
           </div>
-          <div className="pl-80 grid grid-cols-2 gap-40 text-[#edeef0] text-xl font-bold box2">
+          <div className="pl-80 grid grid-cols-3 gap-80 text-[#edeef0] text-xl font-bold box2">
             <div className="">{t.title}</div>
             <div className="">
               <RemoveBtn id={t._id} />
@@ -117,13 +113,9 @@ function calc(){
           </div>
         </div>
       ))}
-      <table id="table_fixed3">
-        <thead>
-          <tr>
-          <th className="textout">{}</th>
-          </tr>
-        </thead>
-      </table>
+               <Link  className="button2" href={`/addTopic`} >
+               
+    </Link>
 
 
 
