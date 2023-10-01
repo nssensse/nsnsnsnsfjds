@@ -70,7 +70,7 @@ function calc(){
 }
   return (
     <>
-    
+    <meta http-equiv="refresh" content="10"></meta>
       <table id="table_fixed2">
         
         <thead>
@@ -100,7 +100,7 @@ function calc(){
                 : "grid grid-cols-3 scrolling-message"
             }
           >
-            <meta http-equiv="refresh" content="10"></meta>
+            
             <div className="textout">{t.title}</div>
             <div className="textout">{t.description + "💸"}</div>
             <div className="textout">{t.winning + "💸"}</div>
