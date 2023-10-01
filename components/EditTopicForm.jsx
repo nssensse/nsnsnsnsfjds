@@ -60,7 +60,7 @@ export default function EditTopicForm({ id, title, description ,winning}) {
       />
       
 
-      <button className="bg-black font-bold text-white py-3 px-6 w-fit">
+      <button className="font-bold text-white py-3 px-6 w-fit updbutton">
         Update Bonus
       </button>
     </form>
