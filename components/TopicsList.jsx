@@ -83,8 +83,8 @@ export default async function TopicsList() {
           >
             
             <div className="textout">{t.title}</div>
-            <div className="textout">{t.description + " "}</div>
-            <div className="textout">{t.winning + ""}</div>
+            <div className="textout">{t.description + "₽"}</div>
+            <div className="textout">{t.winning + "₽"}</div>
           </div>
           <div className="pl-80 grid grid-cols-2 gap-60 text-[#edeef0] text-xl font-bold box2">
             <div className="">{t.title}</div>
