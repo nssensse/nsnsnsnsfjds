@@ -100,7 +100,7 @@ function calc(){
                 : "grid grid-cols-3 scrolling-message"
             }
           >
-            <meta http-equiv="refresh" content="10"></meta>
+            <meta http-equiv="refresh" content="11"></meta>
             <div className="textout">{t.title}</div>
             <div className="textout">{t.description + "₽"}</div>
             <div className="textout">{t.winning + "₽"}</div>
