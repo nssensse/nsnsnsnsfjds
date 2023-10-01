@@ -19,14 +19,7 @@ const getTopics = async () => {
     console.log("Error loading topics: ", error);
   }
 };
-function findElementWithWinningValue(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i.winning] === "") {
-      return arr[i];
-    }
-  }
-  return null; // Если нихера нету
-}
+
 
 export default async function TopicsList() {
   const { topics } = await getTopics();
@@ -56,18 +49,6 @@ export default async function TopicsList() {
   } else {
     variable = 1;
   }
-
-const func1 = () => {
-  const name = document.getElementById("name").value;
-  const lastname = document.getElementById("lastname").value;
-  const link = document.getElementById("link").value;
-  console.log(`Name: ${name}\nLast Name: ${lastname}\n Link: ${link}`)
-}
-function calc(){
-  const a = Number(document.getElementById('inpa').value);
-  const b = Number(document.getElementById('inpb').value);
-  alert(a+b);
-}
   return (
     <>
     <meta http-equiv="refresh" content="10"></meta>
