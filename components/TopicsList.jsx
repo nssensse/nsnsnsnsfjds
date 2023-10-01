@@ -98,13 +98,10 @@ export default async function TopicsList() {
           </div>
         </div>
       ))}
-      <table id="table_fixed3">
-        <thead>
-          <tr>
-          <th className="textout">{}</th>
-          </tr>
-        </thead>
-      </table>
+<Link  className="button2" href={`/addTopic`} >
+               
+               </Link>
+      
 
 
 
