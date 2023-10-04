@@ -75,7 +75,7 @@ background-color: rgb(118, 120, 122);
 .scrolling-message {
   padding-left: 20px;
   gap: 230px;
-  animation: scrollText 20s linear infinite;
+  animation: scrollText 30s linear infinite;
 }
 
 .dsfkdk{
@@ -130,7 +130,7 @@ text-align: center;
     transform: translateY(100px);
   }
   100% {
-    transform: translateY(-850px);
+    transform: translateY(-1050px);
   }
 }
 
