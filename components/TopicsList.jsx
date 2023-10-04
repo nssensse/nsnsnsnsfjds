@@ -94,7 +94,7 @@ export default async function TopicsList() {
             <div className="textout">{t.chatter}</div>
           </div>
           <div className="ml-80 grid grid-cols-2 gap-60 text-[#edeef0] text-xl font-bold box2">
-            <div className="">{t.title}</div>
+            <div className="">{t.title}|{t.chatter}</div>
             <div className="">
               <RemoveBtn id={t._id} />
               
