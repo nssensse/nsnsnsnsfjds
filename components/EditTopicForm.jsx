@@ -4,10 +4,11 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import "../app/globals.scss";
 import RemoveBtn from "./RemoveBtn";
-export default function EditTopicForm({ id, title, description ,winning}) {
+export default function EditTopicForm({ id, title, description ,winning,chatter}) {
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
   const [newWinning, setNewWinning] = useState(winning);
+  const [newChatter, setNewChatter] = useState(chatter);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -19,7 +20,7 @@ export default function EditTopicForm({ id, title, description ,winning}) {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ newTitle, newDescription,newWinning }),
+        body: JSON.stringify({ newTitle, newDescription,newWinning,newChatter }),
       });
 
       if (!res.ok) {
@@ -57,6 +58,13 @@ export default function EditTopicForm({ id, title, description ,winning}) {
         className="border border-slate-500 px-8 py-2"
         type="text"
         placeholder="winning"
+      />
+            <input
+        onChange={(e) => setNewChatter(e.target.value) }
+        value={newChatter}
+        className="border border-slate-500 px-8 py-2"
+        type="text"
+        placeholder="chatter"
       />
       
 

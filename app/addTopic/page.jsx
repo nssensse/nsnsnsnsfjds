@@ -9,11 +9,12 @@ export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [winning, setWinning] = useState("");
+  const [chatter, setChatter] = useState("");
   const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
     router.refresh();
-    if (!title || !description) {
+    if (!title || !description ||!chatter) {
       alert("Title and description are required and win.");
       return;
     }
@@ -24,7 +25,7 @@ export default function AddTopic() {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ title, description ,winning}),
+        body: JSON.stringify({ title, description ,winning,chatter}),
       });
       
       if (res.ok) {
@@ -57,6 +58,13 @@ export default function AddTopic() {
         className="border border-slate-500 px-8 py-2"
         type="text"
         placeholder="bonus price"
+      />
+            <input
+        onChange={(e) => setChatter(e.target.value)}
+        value={chatter}
+        className="border border-slate-500 px-8 py-2"
+        type="text"
+        placeholder="chatter"
       />
 
 
