@@ -49,6 +49,9 @@ export default async function TopicsList() {
   } else {
     variable = 1;
   }
+
+
+  
   return (
     <>
     <meta http-equiv="refresh" content="10"></meta>
@@ -58,35 +61,39 @@ export default async function TopicsList() {
           <tr>
             <th className="border-left">Slot Name</th>
             <th>Bonus Cost</th>
-            <th className="border-right">Bonus Win</th>
+            <th>Bonus Win</th>
+            <th className="border-right">Tournament</th>
           </tr>
         </thead>
       </table>
       <table id="table_fixed">
         <thead>
           <tr>
-            <th className="border-left">{keyCount} 🎁</th>
-            <th>{totalAmount} 💰</th>
-            <th className="border-right">{wintotalAmount} 🏆</th>
+            <th className="border-left pl-14">{keyCount} 🎁</th>
+            <th className="border-left pl-12">{totalAmount} 💰</th>
+            <th className="border-left pl-12">{wintotalAmount} 🏆</th>
+            <th className="border-right pl-10">Chatter 😎</th>
           </tr>
         </thead>
       </table>
 
       {topics.map((t) => (
-        <div key={t._id} className="flex">
+        
+        <div key={t._id} className="flex downed">
           <div
             className={
               variable
-                ? "grid grid-cols-3 defaultgrid"
-                : "grid grid-cols-3 scrolling-message"
+                ? "grid grid-cols-4 defaultgrid"
+                : "grid grid-cols-4 scrolling-message"
             }
           >
-            
+
             <div className="textout">{t.title}</div>
             <div className="textout">{t.description + "₽"}</div>
-            <div className="textout">{t.winning + "₽"}</div>
+            <div  className={(t.winning>t.description)?"okyp textout":"nokyp textout"}>{t.winning + "₽"}</div>
+            <div className="textout">chatter</div>
           </div>
-          <div className="pl-80 grid grid-cols-2 gap-60 text-[#edeef0] text-xl font-bold box2">
+          <div className="ml-80 grid grid-cols-2 gap-60 text-[#edeef0] text-xl font-bold box2">
             <div className="">{t.title}</div>
             <div className="">
               <RemoveBtn id={t._id} />
@@ -97,11 +104,9 @@ export default async function TopicsList() {
             </div>
           </div>
         </div>
+        
       ))}
-<Link  className="button2" href={`/addTopic`} >
-               
-               </Link>
-      
+    
 
 
 
