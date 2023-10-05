@@ -90,7 +90,7 @@ export default async function TopicsList() {
 
             <div className="textout">{t.title}</div>
             <div className="textout">{t.description + "₽"}</div>
-            <div  className={(parseInt(t.winning)>parseInt(t.description))?"okyp textout":"nokyp textout"}>{t.winning + "₽"}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(2)+"x"}</div></div>
+            <div  className={(parseInt(t.winning)>parseInt(t.description))?"okyp textout":"nokyp textout"}>{t.winning + "₽"}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(1)+"x"}</div></div>
             <div className="textout">{t.chatter}</div>
           </div>ы
           <div className="ml-80 grid grid-cols-2 gap-60 text-[#edeef0] text-xl font-bold box2">
