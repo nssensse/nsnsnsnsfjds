@@ -8,7 +8,7 @@ export default function Navbar() {
       <Link className="font-bold" href={"/"}>
       ✟BONUS BUY✟ 
       </Link>
-      <div className="winner">🏆w2qww - 1046x
+      <div className="winner">🏆3dinr - 1123x
       </div>
     </nav>
     
