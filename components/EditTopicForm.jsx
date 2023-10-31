@@ -35,7 +35,7 @@ export default function EditTopicForm({ id, title, description ,winning,chatter}
   };
   return (
 
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3 editheader">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 editheader formpad">
                  
       <input
         onChange={(e) => setNewTitle(e.target.value)}

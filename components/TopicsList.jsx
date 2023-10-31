@@ -49,12 +49,18 @@ export default async function TopicsList() {
   } else {
     variable = 1;
   }
+  let variabledval=1;
+  if (keyCount > 12) {
+    variabledval = 0;
+  } else {
+    variabledval = 1;
+  }
 
 
   
   return (
     <>
-    <meta http-equiv="refresh" content="15"></meta>
+    <meta http-equiv="refresh" content="25"></meta>
       <table id="table_fixed2">
         
         <thead>
@@ -81,10 +87,12 @@ export default async function TopicsList() {
         
         <div key={t._id} className="flex downed">
           <div
-            className={
-              variable
+            className={ variabledval?
+              (variable
                 ? "grid grid-cols-4 defaultgrid"
-                : "grid grid-cols-4 scrolling-message"
+                : "grid grid-cols-4 scrolling-message"):(variable
+                  ? "grid grid-cols-4 defaultgrid"
+                  : "grid grid-cols-4 scrolling-message2")
             }
           >
 
