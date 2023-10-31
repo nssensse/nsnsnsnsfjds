@@ -75,10 +75,10 @@ export default async function TopicsList() {
       <table id="table_fixed">
         <thead>
           <tr>
-            <th className="border-left pl-14">{keyCount} 🎁</th>
-            <th className="border-left pl-12">{totalAmount} 💰</th>
-            <th className="border-left pl-12">{wintotalAmount} ⭐</th>
-            <th className="border-right pl-10">Chatter 😎</th>
+            <th className="border-left pl-10">{keyCount}🎁</th>
+            <th className="border-left pl-12">{totalAmount} 💸</th>
+            <th className="border-left pl-12">{wintotalAmount} 💰</th>
+            <th className="border-right pl-10">Chatter 🤑</th>
           </tr>
         </thead>
       </table>
@@ -97,8 +97,8 @@ export default async function TopicsList() {
           >
 
             <div className="textout">{t.title}</div>
-            <div className="textout">{t.description + "₽"}</div>
-            <div  className={(parseInt(t.winning)>parseInt(t.description))?"okyp textout":"nokyp textout"}>{t.winning + "₽"}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(1)+"x"}</div></div>
+            <div className="textout">{t.description +"₽" }</div>
+            <div  className={(parseInt(t.winning)>parseInt(t.description))?"okyp textout":"nokyp textout"}>{(t.winning)? (t.winning+ "₽"):("________")}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(1)+"x"}</div></div>
             <div className="textout">{t.chatter}</div>
           </div>
           <div className="ml-80 grid grid-cols-2 gap-60 text-[#edeef0] text-xl font-bold box2">
