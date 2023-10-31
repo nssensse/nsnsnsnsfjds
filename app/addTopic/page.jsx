@@ -14,7 +14,7 @@ export default function AddTopic() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     router.refresh();
-    if (!title || !description ||!chatter) {
+    if (!title || !description ) {
       alert("Title and description are required and win.");
       return;
     }
