@@ -5,10 +5,10 @@ export default function Navbar() {
     
     <nav className="z-40 flex justify-between bheader">
 
-      <Link className="font-bold" href={"/"}>
+      <Link className="font-bold bbtittle" href={"/"}>
       ✟BONUS BUY✟ 
       </Link>
-      <div className="winner">🏆fov-500x
+      <div className="winner">
       </div>
     </nav>
     

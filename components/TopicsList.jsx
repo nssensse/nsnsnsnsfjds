@@ -56,32 +56,47 @@ export default async function TopicsList() {
     variabledval = 1;
   }
 
-
+  let symb="";
+  if((wintotalAmount-totalAmount)>0)
+  symb="➕";
+ else
+ symb="➖";
   
   return (
     <>
     <meta http-equiv="refresh" content="25"></meta>
+    <div className="infobox">
+      
+    </div>
+    <table id="table_fixed">
+        <thead>
+          <tr>
+          <th className="border-left leften">Number of bonus</th>
+            <th className="border-left righten"> {keyCount} 🎲</th>
+          </tr>
+          <tr>
+          <th className="border-left leften">Cost of bonuses</th>
+            <th className="border-left righten"> {totalAmount} ★</th>
+          </tr>
+          <tr>
+          <th className="border-left leften">Bonus buy profit</th>
+            <th className="border-left righten"> {wintotalAmount-totalAmount} {symb}</th>
+          </tr>
+        </thead>
+      </table>
       <table id="table_fixed2">
+         
         
         <thead>
           <tr>
             <th className="border-left">Slot Name</th>
             <th>Bonus Cost</th>
             <th>Bonus Win</th>
-            <th className="border-right">Tournament</th>
+            <th className="border-right">Chatter</th>
           </tr>
         </thead>
       </table>
-      <table id="table_fixed">
-        <thead>
-          <tr>
-            <th className="border-left pl-10">{keyCount}🎁</th>
-            <th className="border-left pl-12">{totalAmount} 💸</th>
-            <th className="border-left pl-12">{wintotalAmount} 💰</th>
-            <th className="border-right pl-10">Chatter 🤑</th>
-          </tr>
-        </thead>
-      </table>
+
 
       {topics.map((t) => (
         
@@ -89,19 +104,19 @@ export default async function TopicsList() {
           <div
             className={ variabledval?
               (variable
-                ? "grid grid-cols-4 defaultgrid"
-                : "grid grid-cols-4 scrolling-message"):(variable
-                  ? "grid grid-cols-4 defaultgrid"
-                  : "grid grid-cols-4 scrolling-message2")
+                ? "grid grid-cols-5 defaultgrid downed"
+                : "grid grid-cols-5 scrolling-message downed"):(variable
+                  ? "grid grid-cols-5 defaultgrid downed"
+                  : "grid grid-cols-5 scrolling-message2 downed")
             }
           >
 
-            <div className="textout">{t.title}</div>
-            <div className="textout">{t.description +"₽" }</div>
-            <div  className={(parseInt(t.winning)>parseInt(t.description))?"okyp textout":"nokyp textout"}>{(t.winning)? (t.winning+ "₽"):("________")}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(1)+"x"}</div></div>
-            <div className="textout">{t.chatter}</div>
+            <div className="textout slname">{t.title}</div>
+            <div className="textout otherr">{t.description +"₽" }</div>
+            <div  className={(parseInt(t.winning)>parseInt(t.description))?"okyp textout":"nokyp textout otherr"}>{(t.winning)? (t.winning+ "₽"):("------")}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(1)+"x"}</div></div>
+            <div className="textout chattername otherr">{t.chatter}</div>
           </div>
-          <div className="ml-80 grid grid-cols-2 gap-60 text-[#edeef0] text-xl font-bold box2">
+          <div className="ml-80 grid grid-cols-4 gap-60 text-[#edeef0] text-xl font-bold box2">
             <div className="">{t.title}|{t.chatter}</div>
             <div className="">
               <RemoveBtn id={t._id} />
