@@ -44,7 +44,7 @@ export default async function TopicsList() {
   let sumwin = (a) => a.reduce((x, y) => x + y);
   let wintotalAmount = sum(topics.map((x) => Number(x.winning)));
   var variable = 1;
-  if (keyCount > 6) {
+  if (keyCount > 8) {
     variable = 0;
   } else {
     variable = 1;
@@ -58,9 +58,9 @@ export default async function TopicsList() {
 
   let symb="";
   if((wintotalAmount-totalAmount)>0)
-  symb="➕";
+  symb="⬈";
  else
- symb="➖";
+ symb="⬊";
   
   return (
     <>
@@ -113,7 +113,7 @@ export default async function TopicsList() {
 
             <div className="textout slname">{t.title}</div>
             <div className="textout otherr">{t.description +"₽" }</div>
-            <div  className={(parseInt(t.winning)>parseInt(t.description))?"okyp textout":"nokyp textout otherr"}>{(t.winning)? (t.winning+ "₽"):("------")}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(1)+"x"}</div></div>
+            <div  className={((parseInt(t.winning)>parseInt(t.description))&&parseInt(t.winning)>0)?"okyp textout pads":"nokyp textout otherr pads"}>{(t.winning)? (t.winning+ "₽"):("–––––")}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(0)+"x"}</div></div>
             <div className="textout chattername otherr">{t.chatter}</div>
           </div>
           <div className="ml-80 grid grid-cols-4 gap-60 text-[#edeef0] text-xl font-bold box2">

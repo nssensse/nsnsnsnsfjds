@@ -7,9 +7,11 @@ export default function Navbar() {
 
       <Link className="font-bold bbtittle" href={"/"}>
       ✟BONUS BUY✟ 
-      </Link>
-      <div className="winner">
+      
+      <div className="winner" >
+      KappaPrideSummoner
       </div>
+      </Link>
     </nav>
     
   );
