@@ -76,7 +76,7 @@ export default async function TopicsList() {
           </tr>
           <tr>
           <th className="border-left leften">Cost of bonuses</th>
-            <th className="border-left righten"> {totalAmount} ★</th>
+            <th className="border-left righten"> {totalAmount} 🔘</th>
           </tr>
           <tr>
           <th className="border-left leften">Bonus buy profit</th>
