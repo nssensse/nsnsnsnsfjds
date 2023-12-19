@@ -7,11 +7,13 @@ body {
   white-space: nowrap;
   color: #dedbe9c5;
   overflow: hidden;
+
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  
+  //font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+   // monospace;
 }
 .bheader{
   //text-shadow: -3px -3px 3px #b4a7d6cc, 3px -3px 3px #b4a7d6cc, -3px 3px 3px #b4a7d6cc, 3px 3px 3px #b4a7d6cc;
@@ -26,9 +28,7 @@ code {
   left: -0px;
   width: 898px;
   position:absolute; 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+
 }
 
 .bbtittle{
@@ -41,6 +41,7 @@ code {
   margin-left: 25px;
   font-size:56px;
   border-radius: 20px;
+  //font-family: Tahoma, Geneva, sans-serif;
 }
 
 .head2{
@@ -121,9 +122,7 @@ margin-bottom: 20px;
   height: 10px;
   font-size: 32px;
   font-weight: 700;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Courier New', Courier, monospace;
    // text-shadow: -2px -2px 2px #dfdede1f, 2px -2px 2px #dfdede1f, -2px 2px 2px #dfdede1f, 2px 2px 2px #dfdede1f;
   //text-shadow: -1px -1px 1px #5d5064, 1px -1px 1px #5d5064, -1px 1px 1px #5d5064, 1px 1px 1px #5d5064;
 }
@@ -146,9 +145,7 @@ align-items: center;
 margin-top: -10px;
   font-size: 10px;
   text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+
   //text-shadow: -1px -1px 1px #5d5064, 1px -1px 1px #5d5064, -1px 1px 1px #5d5064, 1px 1px 1px #5d5064;
 }
 .remove{
@@ -198,9 +195,9 @@ margin-top: -10px;
 }
 
 .winner{
-  text-shadow: -1px -1px 1px #b4a7d6, 1px -1px 1px #b4a7d6, -1px 1px 1px #b4a7d6, 1px 1px 1px #b4a7d6;
+ // text-shadow: -1px -1px 1px #b4a7d6, 1px -1px 1px #b4a7d6, -1px 1px 1px #b4a7d6, 1px 1px 1px #b4a7d6;
   padding-top:0px;
-  color: #c4c4c49f;
+  color: #dedbe9b0;
   margin-left: -3px;
   font-size: 38px;
  // background-image: url('https://w7.pngwing.com/pngs/526/638/png-transparent-computer-icons-twitch-twitch-subscribe-angle-text-logo-thumbnail.png');
@@ -243,9 +240,7 @@ margin-top: -10px;
   //border-radius: 20px;
 }
 #table_fixed2 thead th {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;
+
   border-radius: 20px;
   background-color: #49474e3f;
   //border-radius:15px;
@@ -254,10 +249,11 @@ margin-top: -10px;
   z-index: 3;
   position: relative;  
   top: -12px;
-  font-size: 24px;
+  font-size: 28px;
   color: #dedbe993;
   height: 56px;
   width: 500px;
+  font-family: 'Courier New', Courier, monospace;
  // text-shadow: -2px -2px 2px #dfdede1f, 2px -2px 2px #dfdede1f, -2px 2px 2px #dfdede1f, 2px 2px 2px #dfdede1f;
   //text-shadow: -1px -1px 1px #dfdede, 1px -1px 1px #dfdede, -1px 1px 1px #dfdede, 1px 1px 1px #dfdede;
 }
@@ -273,9 +269,7 @@ margin-top: -10px;
 }
 #table_fixed thead th {
   
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;
+
   border-radius: 8px;
   border: 1px solid #4d0eeb;
   background-color: #49474e3f;
@@ -291,6 +285,7 @@ margin-top: -10px;
   color: #dedbe9b2;
   height: 56px;
   width: 330px;
+  font-family: 'Courier New', Courier, monospace;
   //border-radius: 20px;
   //text-shadow: -2px -2px 2px #dfdede1f, 2px -2px 2px #dfdede1f, -2px 2px 2px #dfdede1f, 2px 2px 2px #dfdede1f;
 }

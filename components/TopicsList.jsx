@@ -79,7 +79,7 @@ export default async function TopicsList() {
             <th className="border-left righten"> {totalAmount} 🔘</th>
           </tr>
           <tr>
-          <th className="border-left leften">Bonus buy profit</th>
+          <th className="border-left leften">Bonus buy status</th>
             <th className="border-left righten"> {wintotalAmount-totalAmount} {symb}</th>
           </tr>
         </thead>
