@@ -9,7 +9,7 @@ export default function Navbar() {
       BONUS BUY❄️
       
       <div className="winner" >
-      🎅🏼▄︻デ══━一💨
+      🎅🏼▄︻デ══━一💨✈️
       </div>
       </Link>
 
