@@ -5,7 +5,7 @@
 body {
   background: #000000;
   white-space: nowrap;
-  color: #dedbe9;
+  color: #dedbe9c5;
   overflow: hidden;
 }
 
@@ -15,7 +15,7 @@ code {
 }
 .bheader{
   //text-shadow: -3px -3px 3px #b4a7d6cc, 3px -3px 3px #b4a7d6cc, -3px 3px 3px #b4a7d6cc, 3px 3px 3px #b4a7d6cc;
-  height: 250px;
+  height: 260px;
   //padding-left: 160px;
   //border-radius: .7rem;
   background: #141414;//131313
@@ -32,6 +32,7 @@ code {
 }
 
 .bbtittle{
+  box-shadow: 0 0px 10px 0px #ffffff3a;
   background-color: #49474e3f;
   height: 167px;
   width: 460px;
@@ -39,7 +40,7 @@ code {
   padding-left: 30px;
   margin-left: 25px;
   font-size:56px;
-  //border-radius: 20px;
+  border-radius: 20px;
 }
 
 .head2{
@@ -131,6 +132,7 @@ margin-bottom: 20px;
   color: #dedbe993;
 }
 .chattername{
+  margin-top: 10px;
   font-size: 23px;
   margin-left: -45px
 }
@@ -184,6 +186,16 @@ margin-top: -10px;
 .column{
   background-color: #4CAF50;
 }
+.listbox{
+  z-index: 0;
+  background-color: #49474e3f;
+  height: 350px;
+  width: 865px;
+  margin-bottom: -350px;
+  margin-left: 0px;
+  border-radius: 20px;
+  box-shadow: 0 0px 10px 0px #ffffff3a;
+}
 
 .winner{
   text-shadow: -1px -1px 1px #b4a7d6, 1px -1px 1px #b4a7d6, -1px 1px 1px #b4a7d6, 1px 1px 1px #b4a7d6;
@@ -194,9 +206,10 @@ margin-top: -10px;
  // background-image: url('https://w7.pngwing.com/pngs/526/638/png-transparent-computer-icons-twitch-twitch-subscribe-angle-text-logo-thumbnail.png');
 }
 .slname{
-  margin-left: -55px;
+  margin-left: -52px;
   width: 220px;
   height: 45px;
+ 
  
  // border: 1px red solid;
  // display: grid;
@@ -233,7 +246,7 @@ margin-top: -10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   sans-serif;
-
+  border-radius: 20px;
   background-color: #49474e3f;
   //border-radius:15px;
   overflow: hidden;
@@ -259,9 +272,11 @@ margin-top: -10px;
   //border-radius: 0px 30px 30px 0px;
 }
 #table_fixed thead th {
+  
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   sans-serif;
+  border-radius: 8px;
   border: 1px solid #4d0eeb;
   background-color: #49474e3f;
   text-align: left;

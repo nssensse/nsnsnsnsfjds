@@ -12,7 +12,9 @@ export default function Navbar() {
       KappaPrideSummoner
       </div>
       </Link>
+
     </nav>
+    
     
   );
 }

@@ -65,10 +65,10 @@ export default async function TopicsList() {
   return (
     <>
     <meta http-equiv="refresh" content="25"></meta>
-    <div className="infobox">
-      
-    </div>
+
+ 
     <table id="table_fixed">
+      
         <thead>
           <tr>
           <th className="border-left leften">Number of bonus</th>
@@ -96,7 +96,9 @@ export default async function TopicsList() {
           </tr>
         </thead>
       </table>
-
+      <div className="listbox">
+      
+      </div>
 
       {topics.map((t) => (
         
