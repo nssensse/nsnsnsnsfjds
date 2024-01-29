@@ -1034,7 +1034,18 @@ export default function Toplist() {
         </thead>
 
         <tbody>
-
+        {topics.map((user, index) => (
+            <tr>
+              <td>{index + 1}.</td>
+              <td>{user.title}</td>
+              <td>{user.description}₽</td>
+              <td>{user.winning}₽</td>
+              <Link href={`/editTopic/${user._id}`}>
+                  <HiPencilAlt size={35} />
+                </Link>
+                <RemoveBtn id={user._id} />
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
