@@ -1044,7 +1044,7 @@ export default function Toplist() {
                 <Link href={`/editTopic/${user._id}`}>
                   <HiPencilAlt size={35} />
                 </Link>
-                <RemoveBtn id={user._id} updateTrigger={updateTrigger} />
+                <RemoveBtn id={user._id} />
               </td>
             </tr>
           ))}
