@@ -27,20 +27,20 @@ export default function EditTopicForm({ id, title, description ,winning,chatter}
         throw new Error("Failed to update bonus");
       }
       router.refresh();
-      router.push("/");
+      router.push("/addTopic");
       refreshPage();
     } catch (error) {
       console.log(error);
     }
   };
   return (
-
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3 editheader formpad">
+    <div className="container">
+    <form onSubmit={handleSubmit} className="form-group">
                  
       <input
         onChange={(e) => setNewTitle(e.target.value)}
         value={newTitle}
-        className="border border-slate-500 px-8 py-2"
+        className="form-group"
         type="text"
         placeholder="bonus name"
       />
@@ -48,29 +48,30 @@ export default function EditTopicForm({ id, title, description ,winning,chatter}
       <input
         onChange={(e) => setNewDescription(e.target.value)}
         value={newDescription}
-        className="border border-slate-500 px-8 py-2"
+        className="form-group"
         type="text"
         placeholder="bonus price"
       />
       <input
         onChange={(e) => setNewWinning(e.target.value) }
         value={newWinning}
-        className="border border-slate-500 px-8 py-2"
+        className="form-group"
         type="text"
         placeholder="winning"
       />
             <input
         onChange={(e) => setNewChatter(e.target.value) }
         value={newChatter}
-        className="border border-slate-500 px-8 py-2"
+        className="form-group"
         type="text"
         placeholder="chatter"
       />
       
 
-      <button className="font-bold text-white py-3 px-6 w-fit updbutton">
+      <button className="btn text-dark update">
         Update Bonus
       </button>
     </form>
+    </div>
   );
 }

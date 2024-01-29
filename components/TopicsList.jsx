@@ -114,7 +114,6 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
   
   return (
     <>
-    <meta http-equiv="refresh" content="25"></meta>
 
     <main className="main">
       <>
@@ -126,8 +125,8 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
                 <div className="pic-logo"></div>
                 <ul className="aff">BONUSBUY</ul>
               </div>
-              <div className="nowslot">⭐ {titleOfFirstObjectWithEmptyWinning21}₽|{titleOfFirstObjectWithEmptyWinning}</div>
-              <div className="topslot">🏆 {titleOfObjectWithMaxWinning1}₽|{titleOfObjectWithMaxWinning}</div>
+              <div className="nowslot">⭐ {titleOfFirstObjectWithEmptyWinning21}{titleOfFirstObjectWithEmptyWinning21?"₽|":""}{titleOfFirstObjectWithEmptyWinning}</div>
+              <div className="topslot">🏆 {titleOfObjectWithMaxWinning1}{titleOfObjectWithMaxWinning1?"₽|":""}{titleOfObjectWithMaxWinning}</div>
               <table id="table_fixed">
                 <thead>
                   <tr>
@@ -156,12 +155,13 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
           </div>
 
           <table className="table tbdsfsd">
-            <thead className="thead-dark"> 
+            <thead className="thead-dark1"> 
               <tr>
                 <th width="10px"></th>
                 <th width="350px">Slot name</th>
                 <th width="30px">Bonus cost</th>
                 <th width="40px">Bonus win</th>
+
               </tr>
             </thead>
 

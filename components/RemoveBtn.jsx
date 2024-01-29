@@ -14,15 +14,14 @@ export default function RemoveBtn({ id }) {
       });
 
       if (res.ok) {
-        router.refresh();
-        refreshPage();
+        location.reload(); // Обновляем страницу
       }
     }
   };
 
   return (
     <button onClick={removeTopic} className="color-[#edeef0]">
-      <HiOutlineTrash size={16} />
+      <HiOutlineTrash size={35} />
     </button>
   );
 }
