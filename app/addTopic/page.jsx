@@ -992,7 +992,7 @@ export default function Toplist() {
 <>
 
 
-    <div className="container" >/*id="protectedArea"*/ 
+    <div className="container" >
       
       <form onSubmit={handleSubmit} className="form-group" id="add_user">
         <input
