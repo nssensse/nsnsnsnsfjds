@@ -142,17 +142,8 @@ export default function Toplist() {
       <div className="listbox"></div>
 
       {topics.map((t) => (
-        <div key={t._id} className="flex downed">
-          <div
-            className={
-    "grid grid-cols-5 scrolling-message2 downed"
-            }
-          >
-            <div className="textout slname">{t.title}</div>
-            <div className="textout otherr">{t.description + "₽"}</div>
+        <div key={t._id} className="">
 
-            <div className="textout chattername otherr">{t.chatter}</div>
-          </div>
           <div className="ml-80 grid grid-cols-4 gap-60 text-[#edeef0] text-xl font-bold box2">
             <div className="">
               {t.title}|{t.chatter}

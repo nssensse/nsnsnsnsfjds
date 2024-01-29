@@ -37,30 +37,80 @@ export default async function TopicsList() {
   console.log(obj[last]);
 
  
-
+  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////
+  let suum=12;
   let sum = (a) => a.reduce((x, y) => x + y);
-  let totalAmount = sum(topics.map((x) => Number(x.description)));
+  let totalAmount = sum(topics.map((x) => Number(x.winning)));
+  
+  let profit = (a) => a.reduce((x, y) => x + y);
+  let  totalprofit= profit(topics.map((x) => Number(x.description)));
 
-  let sumwin = (a) => a.reduce((x, y) => x + y);
-  let wintotalAmount = sum(topics.map((x) => Number(x.winning)));
-  var variable = 1;
-  if (keyCount > 8) {
-    variable = 0;
-  } else {
-    variable = 1;
-  }
-  let variabledval=1;
-  if (keyCount > 12) {
-    variabledval = 0;
-  } else {
-    variabledval = 1;
-  }
 
-  let symb="";
-  if((wintotalAmount-totalAmount)>0)
-  symb="⬈";
- else
- symb="⬊";
+
+
+
+  function countObjectsWithNegativeOrEmptyWinning(data) {
+    let count = 0;
+  
+    for (const obj of data) {
+      // Проверяем, является ли поле winning пустым или меньшим нуля
+      if (obj.winning || parseInt(obj.winning) > 0) {
+        count++;
+      }
+    }
+  
+    return count;
+  }
+  
+  const result = countObjectsWithNegativeOrEmptyWinning(topics);
+  ///////////
+  function findNearestObjectWithEmptyValue(users, key) {
+    let nearestObject = null;
+    let distance = Infinity;
+  
+    for (let i = 0; i < users.length; i++) {
+      const object = users[i];
+      if (object.hasOwnProperty(key) && object[key] == 0) {
+        const currentDistance = Math.abs(i - users.indexOf(object));
+        if (currentDistance < distance) {
+          distance = currentDistance;
+          nearestObject = object;
+        }
+      }
+    }
+  
+    return nearestObject;
+  }
+  const nearestObject = findNearestObjectWithEmptyValue(topics, "winning");
+ 
+ 
+ 
+ const min = 0;
+ const max = 570;
+ 
+ // Clamp number between two values with the following line:
+ const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+ 
+ clamp(-50, min, max); // Will return: 0
+ clamp(50, min, max);  // Will return: 50
+ let progrbaar;
+ progrbaar=clamp(totalAmount/totalprofit*550, min, 570); // Will return: 100
+  ///////////
+  const firstObjectWithEmptyWinning = topics.find(obj => !obj.winning);
+
+// Извлекаем title первого объекта с пустым winning
+const titleOfFirstObjectWithEmptyWinning = firstObjectWithEmptyWinning ? firstObjectWithEmptyWinning.title : null;
+const titleOfFirstObjectWithEmptyWinning21 = firstObjectWithEmptyWinning ? firstObjectWithEmptyWinning.description : null;
+  ///////////
+  const objectWithMaxWinning = topics.reduce((max, obj) => (parseInt(obj.winning) > parseInt(max.winning) ? obj : max), topics[0]);
+
+// Извлекаем title объекта с наибольшим winning
+const titleOfObjectWithMaxWinning = objectWithMaxWinning.title;
+
+const titleOfObjectWithMaxWinning1 = objectWithMaxWinning.description;
+const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
+ ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  
+  ///////////
   
   return (
     <>
@@ -76,29 +126,29 @@ export default async function TopicsList() {
                 <div className="pic-logo"></div>
                 <ul className="aff">BONUSBUY</ul>
               </div>
-              <div className="nowslot">⭐ </div>
-              <div className="topslot">🏆</div>
+              <div className="nowslot">⭐ {titleOfFirstObjectWithEmptyWinning21}₽|{titleOfFirstObjectWithEmptyWinning}</div>
+              <div className="topslot">🏆 {titleOfObjectWithMaxWinning1}₽|{titleOfObjectWithMaxWinning}</div>
               <table id="table_fixed">
                 <thead>
                   <tr>
                     <th>Balance</th>
-                    <th style={{ textAlign: 'right' }}>{}💰</th>
+                    <th style={{ textAlign: 'right' }}>{totalprofit}💰</th>
                   </tr>
                   <tr>
                     <th>Bonuses</th>
-                    <th style={{ textAlign: 'right' }}> {}/{}🎁</th>
+                    <th style={{ textAlign: 'right' }}> {result}/{topics.length}🎁</th>
                   </tr>
                   <tr>
                     <th>Profit</th>
-                    <th style={{ textAlign: 'right' }}> 1</th>
+                    <th style={{ textAlign: 'right' }}> {(totalAmount-totalprofit)>0?(totalAmount-totalprofit)+"📈":(totalAmount-totalprofit)+"📉"}</th>
                   </tr>
                   <tr>
                     <th>Status</th>
-                    <th style={{ textAlign: 'right' }}>x📋</th>
+                    <th style={{ textAlign: 'right' }}>{(totalAmount/totalprofit).toFixed(1)}x📋</th>
                   </tr>
                   <tr>
                     <th>Status</th>
-                    <th style={{ textAlign: 'right' }}>x📋</th>
+                    <th style={{ textAlign: 'right' }}>{(totalAmount/totalprofit).toFixed(1)}x📋</th>
                   </tr>
                 </thead>
               </table>
@@ -122,7 +172,7 @@ export default async function TopicsList() {
                 
   <tr key={index} className={topics.length > 10 ? 'tech-slideshow' : ''}>
     <td>{index + 1}.</td>
-    <td>{user.title}</td>
+    <td style={{textAlign: 'left', color: user.winning === maxWinning.toString() ? '#defa7ac0' : '' }}>{user.title}</td>
     <td>{user.description}₽</td>
     <td>{user.winning}₽</td>
   </tr>
@@ -132,7 +182,7 @@ export default async function TopicsList() {
           </table>
           <div className="container-bar">
             <div className="progress2 progress-moved">
-              <div  className="progress-bar2"></div>
+            <div style={{ width: `${progrbaar}px` }} className="progress-bar2"></div>
             </div>
           </div>
         </div>
