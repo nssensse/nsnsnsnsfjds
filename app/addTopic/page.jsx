@@ -55,14 +55,6 @@ const getTopics = async () => {
   }
 };
 
-/*
-<div id="loginForm1">
-
-<br></br>
-<input placeholder="Введите пароль:" className="form-group1" type="password" id="password" />
-<br></br>
-<button className="btn text-dark update" onClick={checkPassword}>Войти</button>
-</div>*/
 const correctPassword = "pupupu";
 
 function checkPassword() {
