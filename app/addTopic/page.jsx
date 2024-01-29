@@ -1040,10 +1040,7 @@ export default function Toplist() {
               <td>{user.title}</td>
               <td>{user.description}₽</td>
               <td>{user.winning}₽</td>
-              <Link href={`/editTopic/${user._id}`}>
-                  <HiPencilAlt size={35} />
-                </Link>
-                <RemoveBtn id={user._id} />
+
             </tr>
           ))}
         </tbody>
