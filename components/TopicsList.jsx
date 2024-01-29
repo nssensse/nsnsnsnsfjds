@@ -2,7 +2,7 @@ import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import "../app/globals.scss";
-import { stringify } from "postcss";
+
 const getTopics = async () => {
   const apiUrl = process.env.API_URL;
   try {
@@ -66,76 +66,78 @@ export default async function TopicsList() {
     <>
     <meta http-equiv="refresh" content="25"></meta>
 
- 
-    <table id="table_fixed">
-      
-        <thead>
-          <tr>
-          <th className="border-left leften">Number of bonus</th>
-            <th className="border-left righten"> {keyCount} 🎲</th>
-          </tr>
-          <tr>
-          <th className="border-left leften">Cost of bonuses</th>
-            <th className="border-left righten"> {totalAmount} 🔘</th>
-          </tr>
-          <tr>
-          <th className="border-left leften">Bonus buy status</th>
-            <th className="border-left righten"> {wintotalAmount-totalAmount} {symb}</th>
-          </tr>
-        </thead>
-      </table>
-      <table id="table_fixed2">
-         
-        
-        <thead>
-          <tr>
-            <th className="border-left">Slot Name</th>
-            <th>Bonus Cost</th>
-            <th>Bonus Win</th>
-            <th className="border-right">Chatter</th>
-          </tr>
-        </thead>
-      </table>
-      <div className="listbox">
-      
-      </div>
-
-      {topics.map((t) => (
-        
-        <div key={t._id} className="flex downed">
-          <div
-            className={ variabledval?
-              (variable
-                ? "grid grid-cols-5 defaultgrid downed"
-                : "grid grid-cols-5 scrolling-message downed"):(variable
-                  ? "grid grid-cols-5 defaultgrid downed"
-                  : "grid grid-cols-5 scrolling-message2 downed")
-            }
-          >
-
-            <div className="textout slname">{t.title}</div>
-            <div className="textout otherr">{t.description +"₽" }</div>
-            <div  className={((parseInt(t.winning)>parseInt(t.description))&&parseInt(t.winning)>0)?"okyp textout pads":"nokyp textout otherr pads"}>{(t.winning)? (t.winning+ "₽"):("–––––")}<div className={"textout2"}>{(t.winning/(t.description/100)).toFixed(0)+"x"}</div></div>
-            <div className="textout chattername otherr">{t.chatter}</div>
+    <main className="main">
+      <>
+      <meta http-equiv="refresh" content="11"></meta>
+        <div className="contcont">
+          <div className="main-header">
+            <div className="header-info">
+              <div className="bbtittle">
+                <div className="pic-logo"></div>
+                <ul className="aff">BONUSBUY</ul>
+              </div>
+              <div className="nowslot">⭐ </div>
+              <div className="topslot">🏆</div>
+              <table id="table_fixed">
+                <thead>
+                  <tr>
+                    <th>Balance</th>
+                    <th style={{ textAlign: 'right' }}>{}💰</th>
+                  </tr>
+                  <tr>
+                    <th>Bonuses</th>
+                    <th style={{ textAlign: 'right' }}> {}/{}🎁</th>
+                  </tr>
+                  <tr>
+                    <th>Profit</th>
+                    <th style={{ textAlign: 'right' }}> 1</th>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <th style={{ textAlign: 'right' }}>x📋</th>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <th style={{ textAlign: 'right' }}>x📋</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
           </div>
-          <div className="ml-80 grid grid-cols-4 gap-60 text-[#edeef0] text-xl font-bold box2">
-            <div className="">{t.title}|{t.chatter}</div>
-            <div className="">
-              <RemoveBtn id={t._id} />
-              
-              <Link href={`/editTopic/${t._id}`}>
-                <HiPencilAlt size={19} />
-              </Link>
+
+          <table className="table tbdsfsd">
+            <thead className="thead-dark"> 
+              <tr>
+                <th width="10px"></th>
+                <th width="350px">Slot name</th>
+                <th width="30px">Bonus cost</th>
+                <th width="40px">Bonus win</th>
+              </tr>
+            </thead>
+
+            <tbody>
+  
+              {/* Add your user table here */}
+              {topics.map((user, index) => (
+                
+  <tr key={index} className={topics.length > 10 ? 'tech-slideshow' : ''}>
+    <td>{index + 1}.</td>
+    <td>{user.title}</td>
+    <td>{user.description}₽</td>
+    <td>{user.winning}₽</td>
+  </tr>
+))}
+
+            </tbody>
+          </table>
+          <div className="container-bar">
+            <div className="progress2 progress-moved">
+              <div  className="progress-bar2"></div>
             </div>
           </div>
         </div>
-        
-      ))}
-    
-
-
-
-
+      </>
+    </main>
     </>
   );
 }
