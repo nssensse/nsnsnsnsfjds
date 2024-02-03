@@ -115,10 +115,10 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
   return (
     <>
 
-    <main className="main">
+
       <>
       <meta http-equiv="refresh" content="11"></meta>
-        <div className="contcont">
+        <div className="contcont nft">
           <div className="main-header">
             <div className="header-info">
               <div className="bbtittle">
@@ -187,7 +187,7 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
           </div>
         </div>
       </>
-    </main>
+
     </>
   );
 }
