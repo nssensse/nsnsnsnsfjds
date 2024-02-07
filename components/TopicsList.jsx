@@ -171,7 +171,7 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
             <thead className="thead-dark1"> 
               <tr>
                 <th width="10px"></th>
-                <th width="350px">Slot name</th>
+                <th style={{textAlign: 'left'}} width="550px">Slot name</th>
                 <th width="30px">Bonus cost</th>
                 <th width="40px">Bonus win</th>
 
@@ -185,7 +185,7 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
                 
   <tr key={index} className={topics.length > 10 ? 'tech-slideshow' : ''}>
     <td>{index + 1}.</td>
-    <td style={{textAlign: 'left', color: user.winning === maxWinning.toString() ? '#defa7ac0' : '' }}>{user.title}</td>
+    <td style={{textAlign: 'left'}}>{user.title}</td>
     <td>{user.description}₽</td>
     <td>{user.winning}₽</td>
   </tr>
