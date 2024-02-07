@@ -96,6 +96,19 @@ export default async function TopicsList() {
  let progrbaar;
  progrbaar=clamp(totalAmount/totalprofit*550, min, 570); // Will return: 100
   ///////////
+  function changeColor(value) {
+    // Нормализуем значение в диапазоне от 0 до 1
+    var normalizedValue = (value - 0) / (570 - 0);
+    
+    // Используем градиент от красного к зеленому
+    var red = Math.floor(235 * (1 - normalizedValue));
+    var green = Math.floor(180 * normalizedValue);
+    
+    // Формируем CSS цвет в формате RGB
+    var color = 'rgba(' + red + ',' + green + ',0,0.25)';
+    return color;
+}
+let color1=changeColor(progrbaar);
   const firstObjectWithEmptyWinning = topics.find(obj => !obj.winning);
 
 // Извлекаем title первого объекта с пустым winning
@@ -182,7 +195,7 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
           </table>
           <div className="container-bar">
             <div className="progress2 progress-moved">
-            <div style={{ width: `${progrbaar}px` }} className="progress-bar2"></div>
+            <div style={{ width: `${progrbaar}px`,background: `${color1}` }} className="progress-bar2"> {}</div>
             </div>
           </div>
         </div>
