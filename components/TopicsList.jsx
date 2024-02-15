@@ -196,7 +196,7 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
           <div className="container-bar">       
             <div className="progress2 progress-moved">
             <div style={{ width: `${progrbaar}px`,background: `${color1}` }} className="progress-bar2">  </div>
-            <div className="valueokyp">{totalAmount}₽</div>
+            <div className="valueokyp">Bonusbuy winning {totalAmount}₽</div>
             </div>
           </div>
         </div>
