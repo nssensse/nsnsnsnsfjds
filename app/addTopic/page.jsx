@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import RemoveBtn from "/components/RemoveBtn";
-import { HiPencilAlt } from "react-icons/hi";
+import { HiOutlinePencilAlt, HiPencil,HiTrash } from "react-icons/hi";
 
 function refreshPage() {
   window.location.reload();
@@ -1007,7 +1007,15 @@ export default function Toplist() {
           className="form-group"
           type="text"
           placeholder="bonus price"
+          list="bonusPrices"
         />
+          <datalist id="bonusPrices">
+    <option value="1000" />
+    <option value="1600" />
+    <option value="2000" />
+    <option value="3200" />
+    <option value="4800" />
+  </datalist>
         <input
           onChange={(e) => setChatter(e.target.value)}
           value={chatter}
@@ -1040,10 +1048,12 @@ export default function Toplist() {
               <td>{user.title}</td>
               <td>{user.description}₽</td>
               <td>{user.winning}₽</td>
-                <Link href={`/editTopic/${user._id}`}>
-                  <HiPencilAlt size={35} />
+              <td>
+                <Link style={{ color: "#ffffff8e" }}href={`/editTopic/${user._id}`}>
+                  <HiOutlinePencilAlt  size={35} />
                 </Link>
-                <RemoveBtn id={user._id} />
+                <HiTrash id={user._id}size={35} style={{ color: "#ffffff8e" }}/>
+                </td>
             </tr>
           ))}
         </tbody>
