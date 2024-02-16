@@ -1,6 +1,6 @@
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
-import { HiPencilAlt,HiGift,HiCurrencyDollar,HiOutlineChartPie,HiOutlineFastForward,HiFire ,HiViewList,HiOutlineDatabase,HiX} from "react-icons/hi";
+import { HiPencilAlt,HiGift,HiCurrencyDollar,HiOutlineChartPie,HiOutlineFastForward,HiFire ,HiViewList,HiOutlineDatabase,HiX,HiBriefcase} from "react-icons/hi";
 import "../app/globals.scss";
 
 const getTopics = async () => {
@@ -120,8 +120,12 @@ const titleOfFirstObjectWithEmptyWinning21 = firstObjectWithEmptyWinning ? first
 // Извлекаем title объекта с наибольшим winning
 const titleOfObjectWithMaxWinning = objectWithMaxWinning.title;
 
+
 const titleOfObjectWithMaxWinning1 = objectWithMaxWinning.description;
 const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
+
+
+
  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  ///////////  
   ///////////
   
@@ -137,28 +141,30 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
               <div className="bbtittle">
                 <div className="pic-logo"></div>
                 <ul className="aff">BONUSBUY</ul>
+                <ul className="aff-little">{totalprofit}₽</ul>
               </div>
-              <div className="topslot"><HiFire size={26}style={{ marginBottom: "-5px" }} /> {titleOfObjectWithMaxWinning1}{titleOfObjectWithMaxWinning1?"₽ | ":""}{titleOfObjectWithMaxWinning}</div>
-              <div className="nowslot"><HiOutlineFastForward size={26}style={{ marginBottom: "-5px" }} /> {titleOfFirstObjectWithEmptyWinning21}{titleOfFirstObjectWithEmptyWinning21?"₽ | ":""}{titleOfFirstObjectWithEmptyWinning}</div>
+              <div className="topslot"><HiFire size={26}style={{ marginBottom: "-5px" }} /> {titleOfObjectWithMaxWinning1}{titleOfObjectWithMaxWinning1?"₽ - ":""}{titleOfObjectWithMaxWinning}</div>
+              <div className="nowslot"><HiOutlineFastForward size={26}style={{ marginBottom: "-5px" }} /> {titleOfFirstObjectWithEmptyWinning21}{titleOfFirstObjectWithEmptyWinning21?"₽ - ":""}{titleOfFirstObjectWithEmptyWinning}</div>
               
               <table id="table_fixed">
                 <thead>
-                  <tr>
-                    <th>Balance</th>
-                    <th style={{ textAlign: 'right' }}>{totalprofit} <HiCurrencyDollar size={26}style={{ marginBottom: "-5px" }} /></th>
-                  </tr>
-                  <tr>
-                    <th>Bonuses</th>
+                <tr>
+                    <th >Bonuses</th>
                     <th style={{ textAlign: 'right' }}> {result}/{topics.length} <HiGift size={26}style={{ marginBottom: "-5px" }} /></th>
                     
                   </tr>
                   <tr>
-                    <th>Profit</th>
+                    <th >All win</th>
+                    <th style={{ textAlign: 'right' }}>{totalAmount} <HiCurrencyDollar size={26}style={{ marginBottom: "-5px" }} /></th>
+                  </tr>
+
+                  <tr>
+                  <th>Profit</th>
                     <th style={{ textAlign: 'right' }}> {(totalAmount-totalprofit)>0?(totalAmount-totalprofit):(totalAmount-totalprofit)} <HiOutlineDatabase size={26}style={{ marginBottom: "-5px" }} /></th>
                   </tr>
                   <tr>
-                    <th>Status</th>
-                    <th style={{ textAlign: 'right' }}>{(totalAmount/totalprofit).toFixed(1)}x <HiX size={26}style={{ marginBottom: "-6px" }} /></th>
+                    <th >Status</th>
+                    <th  style={{ textAlign: 'right' }}>{(totalAmount/totalprofit).toFixed(1)}x <HiX size={26}style={{ marginBottom: "-6px" }} /></th>
                   </tr>
     
                 </thead>
@@ -166,15 +172,14 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
             </div>
           </div>
 
-          <table className="table tbdsfsd">
+          <table className="table">
             <thead className="thead-dark1"> 
-              <tr>
-                <th width="10px"></th>
-                <th style={{textAlign: 'left'}} width="550px">Slot name</th>
-                <th width="30px">Bonus cost</th>
-                <th width="40px">Bonus win</th>
-
-              </tr>
+            <tr>
+    <th class="with-divider" width="10px"></th>
+    <th  class="with-divider" width="550px">Bonus slot name</th>
+    <th class="with-divider" width="30px">Bonus cost</th>
+    <th width="40px">Bonus win</th>
+  </tr>
             </thead>
 
             <tbody>
@@ -196,7 +201,6 @@ const maxWinning = Math.max(...topics.map(user => parseInt(user.winning) || 0));
           <div className="container-bar">       
             <div className="progress2 progress-moved">
             <div style={{ width: `${progrbaar}px`,background: `${color1}` }} className="progress-bar2">  </div>
-            <div className="valueokyp">Bonusbuy winning {totalAmount}₽</div>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@
   --border-btn: #edf2f4;
 }
 body {
-  background-color: rgb(134, 134, 134);
+  background-color: rgba(134, 134, 134, 0.486);
 }
 
 .contcont {
@@ -139,11 +139,20 @@ a {
 .aff {
   animation: fadeIn 2s;
   font-family: "Courier New", Courier, monospace;
-  font-weight: 500;
   position: fixed;
-  top: 38px;
+  top: 22px;
   margin-left: 75px;
   font-weight: 800;
+  color: #e0e0e0;
+}
+.aff-little {
+  animation: fadeIn 2s;
+  font-family: "Courier New", Courier, monospace;
+  position: fixed;
+  top: 60px;
+  font-size: 30px;
+  margin-left: 135px;
+  font-weight: 600;
   color: #e0e0e0;
 }
 .link-tg {
@@ -161,7 +170,7 @@ a {
 #table_fixed th {
   text-align: left;
   color: #cccccc;
-  height: 44px;
+  height: 40px;
   font-size: 20px;
   padding-left: 25px;
 }
@@ -259,7 +268,7 @@ thead th {
   height: 352px;
 }
 .table th {
-  background: #787879;
+  background: #4d4d4d;
   padding: 10px;
   text-align: center;
   padding: 15px;
@@ -312,10 +321,48 @@ table {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.table.thead-dark1 {
-  width: 2000px;
+
+
+#table_fixed th,
+#table_fixed td {
+  position: relative; /* Установка позиции для псевдоэлемента */
 }
 
+#table_fixed th::after,
+#table_fixed td::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20PX;
+  width: 200px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.158); /* Цвет полоски */
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.301); /* Эффект свечения */
+}
+.with-divider::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  bottom: 0;
+  left: 100%; /* Положение полоски справа от ячейки */
+  width: 3px; /* Ширина полоски */
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.5); /* Цвет полоски */
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.74); /* Эффект свечения */
+  transform: translateX(-50%); /* Полоска в середине между ячейками */
+}
+.with-divider2::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  bottom: 0;
+  left: 10px; /* Положение полоски справа от ячейки */
+  width: 1px; /* Ширина полоски */
+  height:20px;
+  background-color: rgba(255, 255, 255, 0.253); /* Цвет полоски */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.158); /* Эффект свечения */
+  transform: translateX(-50%); /* Полоска в середине между ячейками */
+}
 .domain {
   position: fixed;
   top: 110px;
@@ -516,48 +563,34 @@ ul.skills li.sk-not {
   }
 }
 
-.listbox-admin table {
 
-}
 
-.table2 td,
-.table2 th {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;
-  padding: 0.75em;
-  vertical-align: top;
-  text-align: center;
-  color: #000000;
-  border-top: 1px solid var(--border);
-}
-.table2 td > a.btn {
-  padding: 0.3em 1em;
-  font-size: 1.1em;
-  margin: 0 0.2em;
-}
-.table2 tr:hover {
-  background-color: #6b6b6b59;
-}
-.table2 tr:hover td > a {
-  box-shadow: none;
-}
-
-.table2 .thead-dark2 .table2 th {
-  color: #fff;
-  background-color: var(--dark);
-  border-color: #32383e;
-}
 .table2 {
-  margin-left: 510px;
-  width: 770px;
-  background: rgba(201, 201, 201, 0.774);
-  font-size: 22px;
+  margin-left: 550px; /* Центрирование таблицы */
+  width: 700px; /* Ширина таблицы на всю доступную ширину */
+  border-collapse: collapse; /* Убираем отступы между ячейками */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px; /* Размер шрифта */
   color: #000000;
-  border-spacing: 0px;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  display: block;
+  background: rgba(240, 240, 240, 0.774);
+  
+}
+
+.table2 th,
+.table2 td {
+  color: #000000;
+  padding: 5px; /* Отступы вокруг содержимого ячеек */
+  border: 1px solid  #00000017;
+  text-align: center; /* Выравнивание текста по центру */
+  height: 10px;
+}
+
+.table2 td:hover {
+  background-color: #6b6b6b59; /* Изменение цвета фона при наведении на строку */
+}
+
+.table2 td:hover td > a {
+  box-shadow: none; /* Убираем тень у ссылок внутри строки при наведении */
 }
 .form-group1 {
   height: 40px;

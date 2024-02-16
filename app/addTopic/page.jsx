@@ -1029,14 +1029,15 @@ export default function Toplist() {
         </button>
       </form>
 
-      <div className="listbox-admin"></div>
+      <div className=""></div>
       <table className="table2">
-        <thead className="thead-dark2">
+        <thead className="">
           <tr>
             <th width="10px"></th>
             <th width="350px">Slot name</th>
             <th width="30px">Bonus cost</th>
             <th width="40px">Bonus win</th>
+            <th width="40px">X</th>
             <th width="40px">Action</th>
           </tr>
         </thead>
@@ -1045,9 +1046,10 @@ export default function Toplist() {
         {topics.map((user, index) => (
             <tr key={index}>
               <td>{index + 1}.</td>
-              <td>{user.title}</td>
+              <td >{user.title}</td>
               <td>{user.description}₽</td>
               <td>{user.winning}₽</td>
+              <td>{(user.winning/user.description*100).toFixed(1)}</td>
               <td>
                 <Link style={{ color: "#ffffff8e" }}href={`/editTopic/${user._id}`}>
                   <HiOutlinePencilAlt  size={35} />
