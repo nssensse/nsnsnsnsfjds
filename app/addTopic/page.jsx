@@ -1054,7 +1054,7 @@ export default function Toplist() {
                 <Link style={{ color: "#ffffff8e" }}href={`/editTopic/${user._id}`}>
                   <HiOutlinePencilAlt  size={35} />
                 </Link>
-                <HiTrash id={user._id}size={35} style={{ color: "#ffffff8e" }}/>
+                <RemoveBtn id={user._id}size={35} style={{ color: "#ffffff8e" }}/>
                 </td>
             </tr>
           ))}
